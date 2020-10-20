@@ -3,8 +3,8 @@ A command line viewer for OzBargain.com.au.
 
 ## Installation
 
-This is a simple `bash` script. Simply download it and copy to somewhere on the path and make it 
-executable. For example:
+This is a simple `bash` script. Simply [download it](https://raw.githubusercontent.com/selcuk/ozb/master/ozb)
+and copy to somewhere on the path and make it executable. For example:
 
     cp ozb /usr/local/bin
     chmod 755 /usr/local/bin/ozb
