@@ -1,7 +1,7 @@
 #!/bin/bash
 function list() {
     echo -e "\033[32m$2 Deals\033[39m"
-    curl -s https://www.ozbargain.com.au/$1 | grep "<title>" | tail -n +2 | head -n 10 | sed "s/<[^>]*>//g; s/^/-/g; s/\&amp\;/\&/g; s/&quot;/\"/g; s/&#039;/\'/g" | egrep --color=always '\$[0-9.,]*|$'
+    curl -Ls https://www.ozbargain.com.au/$1 | grep "<title>" | tail -n +2 | head -n 10 | sed "s/<[^>]*>//g; s/^/-/g; s/\&amp\;/\&/g; s/&quot;/\"/g; s/&#039;/\'/g" | egrep --color=always '\$[0-9.,]*|$'
 }
 echo "H4sIAPuE8FwAA22OSwrAIAxE955idq0geCFhepAcvi9+NqVRMh+SUUm2lXXwW9stUocP5gKsoPY57XZNymgIrvBaoT1YlyfZCk0YqYOHeyc1EdFgkW7TUQ5u+f0dNRfLC+pWW9fKAAAA" | base64 --decode | gunzip
 if [ -z "$1" ]
@@ -9,5 +9,5 @@ if [ -z "$1" ]
     list "feed" "Front Page"
     list "deals/feed" "New"
   else
-    list "product/$1/feed" "$1"
+    list "tag/$1/feed" "$1"
 fi
